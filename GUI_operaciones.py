@@ -7,7 +7,7 @@ import OPERACIONES
 
 ventana = tk.Tk()
 ventana.title("Calculadora de complejos")
-ventana.geometry("800x200")
+ventana.geometry("1200x400")
 ventana.iconbitmap("icono.ico")
 ##############################################################
 
@@ -58,6 +58,10 @@ def sum_ABC():
     resul=OPERACIONES.suma(OPERACIONES.suma(polar1,polar2),polar3)
     TXT_resul.delete('1', 'end')
     TXT_resul.insert(INSERT, f"{resul[0]} @ {resul[1]}")
+def mul_AB():
+    resul=OPERACIONES.multiplicar(polar1,polar2)
+    TXT_resul.delete('1', 'end')
+    TXT_resul.insert(INSERT, f"{resul[0]} @ {resul[1]}")
 #######################################################################
 LB_modulo = Label(ventana, text="Modulo")
 LB_modulo.grid(column=2, row=2)
@@ -98,6 +102,9 @@ BTN_AB.place(x=400)
 #Sumar A+B+C
 BTN_ABC = Button(ventana,text='A+B+C', command=sum_ABC)
 BTN_ABC.place(x=500)
+#multiplicar A*B
+BTN_AB = Button(ventana,text='A*B', command=mul_AB)
+BTN_AB.place(x=600)
 #Resultado
 LB_resultado = Label(ventana, text="Resultado")
 LB_resultado.place(x=400,y=50)
