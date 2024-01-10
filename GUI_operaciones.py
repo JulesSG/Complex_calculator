@@ -57,19 +57,19 @@ def cNum3():
 #######################################################################
 def sum_AB():
     resul=OPERACIONES.suma(polar1,polar2)
-    TXT_resul.delete('1','end')
+    TXT_resul.delete('0','end')
     TXT_resul.insert(INSERT,f"{resul[0]} @ {resul[1]}")
 def sum_ABC():
     resul=OPERACIONES.suma(OPERACIONES.suma(polar1,polar2),polar3)
-    TXT_resul.delete('1', 'end')
+    TXT_resul.delete('0', 'end')
     TXT_resul.insert(INSERT, f"{resul[0]} @ {resul[1]}")
 def mul_AB():
     resul=OPERACIONES.multiplicar(polar1,polar2)
-    TXT_resul.delete('1', 'end')
+    TXT_resul.delete('0', 'end')
     TXT_resul.insert(INSERT, f"{resul[0]} @ {resul[1]}")
 def div_AB():
     resul=OPERACIONES.divicion(polar1,polar2)
-    TXT_resul.delete('1', 'end')
+    TXT_resul.delete('0', 'end')
     TXT_resul.insert(INSERT, f"{resul[0]} @ {resul[1]}")
 
 #######################################################################
@@ -116,7 +116,7 @@ BTN_ABC.place(x=500)
 BTN_AB = Button(ventana,text='A*B', command=mul_AB)
 BTN_AB.place(x=600)
 #dividir A/B
-BTN_AB = Button(ventana,text='A/B', command=mul_AB)
+BTN_AB = Button(ventana,text='A/B', command=div_AB)
 BTN_AB.place(x=700)
 #Resultado
 LB_resultado = Label(ventana, text="Resultado")
