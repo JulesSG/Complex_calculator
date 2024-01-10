@@ -18,6 +18,9 @@ def cNum1():
         modulo=float(TXT_modulo.get())
         angulo=float(TXT_angulo.get())
         polar1=[modulo,angulo]
+        #limpiar el cuadro de texto de polar1 para una nueva entrada de datos
+        TXT_polar1.delete('0', 'end')
+        #insertar los datos en el cuadro de texto de polar1
         TXT_polar1.insert(INSERT,f"{polar1[0]}@{polar1[1]}°")
         TXT_polar1.config(state=DISABLED)
     except ValueError:
@@ -31,6 +34,7 @@ def cNum2():
         modulo=float(TXT_modulo.get())
         angulo=float(TXT_angulo.get())
         polar2=[modulo,angulo]
+        TXT_polar2.delete('0', 'end')
         TXT_polar2.insert(INSERT,f"{polar2[0]}@{polar2[1]}°")
         TXT_polar2.config(state=DISABLED)
     except ValueError:
@@ -44,6 +48,7 @@ def cNum3():
         modulo=float(TXT_modulo.get())
         angulo=float(TXT_angulo.get())
         polar3=[modulo,angulo]
+        TXT_polar3.delete('0', 'end')
         TXT_polar3.insert(INSERT,f"{polar3[0]}@{polar3[1]}°")
         TXT_polar3.config(state=DISABLED)
     except ValueError:
@@ -62,6 +67,11 @@ def mul_AB():
     resul=OPERACIONES.multiplicar(polar1,polar2)
     TXT_resul.delete('1', 'end')
     TXT_resul.insert(INSERT, f"{resul[0]} @ {resul[1]}")
+def div_AB():
+    resul=OPERACIONES.divicion(polar1,polar2)
+    TXT_resul.delete('1', 'end')
+    TXT_resul.insert(INSERT, f"{resul[0]} @ {resul[1]}")
+
 #######################################################################
 LB_modulo = Label(ventana, text="Modulo")
 LB_modulo.grid(column=2, row=2)
@@ -105,6 +115,9 @@ BTN_ABC.place(x=500)
 #multiplicar A*B
 BTN_AB = Button(ventana,text='A*B', command=mul_AB)
 BTN_AB.place(x=600)
+#dividir A/B
+BTN_AB = Button(ventana,text='A/B', command=mul_AB)
+BTN_AB.place(x=700)
 #Resultado
 LB_resultado = Label(ventana, text="Resultado")
 LB_resultado.place(x=400,y=50)

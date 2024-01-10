@@ -37,3 +37,11 @@ def multiplicar(polar1, polar2):
 
 def suma_3n(polar1,polar2,polar3):
     return suma(suma([polar1,polar2]),polar3)
+
+
+def divicion(polar1,polar2):
+    modulo = polar1[0]/polar2[0]
+    angulo = polar1[1]-polar2[1]
+    div = [modulo,angulo]
+    return div
+
